@@ -4,6 +4,7 @@ build:
   steps:
     - npm-install:
         use-cache: true
+
     - script:
         name: Build assets
         code: |
