@@ -19,13 +19,7 @@ build:
     #     name: Check state
     #     code: |
     #       find . -maxdepth 1 | xargs echo
-
-    - add-ssh-key:
-        keyname: MYPACKAGE_KEY
-
     - script:
-        name: Clone repo
+        name: test repo
         code: |
-          git clone git@github.com:Yago/wercker-testing.git
-          git checkout gh-pages
-          ls -la
+          git status
