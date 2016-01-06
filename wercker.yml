@@ -1,12 +1,9 @@
 box: node
 
-dev:
+build:
   steps:
     - npm-install:
         use-cache: true
-
-build:
-  steps:
     - script:
         name: echo nodejs information
         code: |
