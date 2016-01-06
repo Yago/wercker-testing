@@ -2,20 +2,27 @@ box: node
 
 build:
   steps:
-    - npm-install:
-        use-cache: true
+    # - npm-install:
+    #     use-cache: true
+
+    # - script:
+    #     name: Build assets
+    #     code: |
+    #       ./node_modules/.bin/gulp --production
+    # - script:
+    #     name: Keep only styleguide
+    #     code: |
+    #       find . -maxdepth 1 -not -name 'styleguide' -not -name '.' -not -name '..' | xargs rm -rf
+    #       mv styleguide/* .
+    #       rmdir styleguide
+    # - script:
+    #     name: Check state
+    #     code: |
+    #       find . -maxdepth 1 | xargs echo
 
     - script:
-        name: Build assets
+        name: Clone repo
         code: |
-          ./node_modules/.bin/gulp --production
-    - script:
-        name: Keep only styleguide
-        code: |
-          find . -maxdepth 1 -not -name 'styleguide' -not -name '.' -not -name '..' | xargs rm -rf
-          mv styleguide/* .
-          rmdir styleguide
-    - script:
-        name: Check state
-        code: |
-          find . -maxdepth 1 | xargs echo
+          git clone git@github.com:Yago/wercker-testing.git
+          git checkout gh-pages
+          ls -la
