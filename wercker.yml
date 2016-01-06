@@ -17,4 +17,4 @@ build:
     - script:
         name: Check state
         code: |
-          find . -maxdepth 1 | xarg echo
+          find . -maxdepth 1 | xargs echo
