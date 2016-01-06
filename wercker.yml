@@ -8,3 +8,13 @@ build:
         name: Build assets
         code: |
           ./node_modules/.bin/gulp --production
+    - script:
+        name: Keep only styleguide
+        code: |
+          find . -maxdepth 1 -not -name 'styleguide' -not -name '.' -not -name '..' | xargs rm -rf
+          mv styleguide/* .
+          rmdir styleguide
+    - script:
+        name: Check state
+        code: |
+          find . -maxdepth 1 | xarg echo
