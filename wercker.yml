@@ -7,4 +7,4 @@ build:
     - script:
         name: Build assets
         code: |
-          gulp --production
+          ./node_modules/.bin/gulp --production
