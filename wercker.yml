@@ -5,7 +5,6 @@ build:
     - npm-install:
         use-cache: true
     - script:
-        name: echo nodejs information
+        name: Build assets
         code: |
-          echo "node version $(node -v) running"
-          echo "npm version $(npm -v) running"
+          gulp --production
