@@ -22,4 +22,5 @@ build:
     - script:
         name: test repo
         code: |
+          git checkout gh-pages
           git status
