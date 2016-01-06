@@ -20,6 +20,9 @@ build:
     #     code: |
     #       find . -maxdepth 1 | xargs echo
 
+    - add-ssh-key:
+        keyname: MYPACKAGE_KEY
+
     - script:
         name: Clone repo
         code: |
